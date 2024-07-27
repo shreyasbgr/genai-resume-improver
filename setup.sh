@@ -4,6 +4,9 @@
 sudo apt-get update
 sudo apt-get install -y poppler-utils
 
+# Add Poppler to PATH
+export PATH=$PATH:/usr/bin
+
 # Verify Poppler installation
 if command -v pdfinfo &> /dev/null
 then
