@@ -28,8 +28,8 @@ Assign the percentage matching based on the job description, the missing keyword
 resume: {text}
 description: {jd}
 
-I want the response in one single string having the structure
-{{"JDmatch":"%", "Missing keywords":[],"Profile Summary":"" }}
+I want the response in one single string having the structure with below sections:
+JDmatch (Percentage match), Missing keywords, Profile summary.
 """
 
 # Streamlit app
@@ -44,6 +44,6 @@ if submit:
     if uploaded_file is not None:
         pdf_content = input_pdf_setup(uploaded_file)
         response = get_gemini_response(input_prompt.format(text=pdf_content, jd=jd))
-        st.subheader(response)
+        st.write(response)
     else:
         st.write("Please upload a PDF file to proceed.")

@@ -74,7 +74,7 @@ Please share your professional evaluation on whether the candidate's profile ali
 Highlight the strengths and weaknesses of the applicant in relation to the specified job description.
 """
 
-input_prompt3 = """
+input_prompt2 = """
 You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of the role specified in the job description. You have the ability to scan resumes for relevant keywords and have a deep ATS functionality understanding.
 Your task is to evaluate the resume against the provided job description. Give me the percentage of match if the resume matches the job description. First the output should come as a percentage and then keywords missing and then last final thoughts.
 """
@@ -91,7 +91,7 @@ if submit1:
 if submit2:
     if uploaded_file is not None:
         pdf_content = pdf_input_setup(uploaded_file)
-        response = get_gemini_response(input_prompt3, pdf_content, input_text)
+        response = get_gemini_response(input_prompt2, pdf_content, input_text)
         st.subheader("The Response is")
         st.write(response)
     else:
